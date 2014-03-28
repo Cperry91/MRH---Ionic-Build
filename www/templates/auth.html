@@ -1,0 +1,105 @@
+<!-- <ion-view title="Auth">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>Auth</h1>
+  </ion-content>
+</ion-view> -->
+
+<ion-view title="My.Reef-Harmony">
+
+<div ng-hide="currentUser" id="signup-page"><!-- Show when user is not logged in -->
+  <ion-content scroll="false">
+    <div ng-show="scenario == 'Sign up'">
+      <content>
+      <div class="card">
+        <h2>Sign Up</h2>
+        <div class="list">
+          <form>
+            <label class="item item-input">
+              <input type="email" placeholder="Email Address" ng-model="user.email" required>
+            </label>
+
+            <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="user.username" required>
+            </label>
+
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="user.password" required>
+            </label>
+
+            <label class="item item-input">
+              <input type="text" placeholder="Location" ng-model="user.location" required>
+            </label>
+
+            <label class="item item-input">
+              <input type="text" placeholder="Tagline">
+            </label>
+
+            <button ng-click="signUp(user)" class="button button-block button-energized">Sign up</button>
+            <button class="button button-clear button-energized" ng-click='scenario="Log in"'>Already have an account?</button>
+          </form>
+        </div>
+      </div>
+      </content>
+    </div>
+
+    <!-- Login View -->
+    <div ng-show="scenario == 'Log in'" id="login-page">
+      <content>
+      <div class="card">
+      <h2>Your tank. Simplified.</h2>
+        <div class="list" ng-hide="forgotPass">
+         <form>
+          <label class="item item-input">
+            <input type="text" ng-model="user.username" placeholder="Username">
+          </label>
+          <label class="item item-input">
+            <input type="password" ng-model="user.password" placeholder="Password">
+          </label>
+
+          <button class="button button-block button-energized" ng-click="logIn(user)">Login</button>
+          <button class="button button-clear button-energized" ng-click='scenario="Sign up"'>Sign Up</button>
+          <button class="button button-clear button-energized" ng-click="forgotPass = true">Forgot Password</button>
+         </form>
+        </div>
+
+
+        <div class="list" ng-show="forgotPass">
+         <form>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Forgot Password</span>
+            <input type="email" placeholder="Email Address" ng-model="confirm" />
+          </label>
+
+          <button ng-click="resetPass()" nb-model="resetPass.email" class="button button-block button-energized">Send Password Reset</button>
+          <button class="button button-block button-assertive" ng-click="forgotPass = false">Cancel</button>
+         </form>
+        </div>
+      </div>
+      </content>
+    </div><!-- Close Log in View -->
+  </ion-content>
+</div><!-- Close Non-User View -->
+
+<!-- Welcome View -->
+<div ng-show="currentUser">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button menu-toggle="right" class="button button-icon icon ion-ios7-gear"></button>
+    </ion-nav-buttons>
+  <ion-content has-header="true" scroll="false" id="welcome-page">
+    <content>
+      <div class="card">
+        <h2>Welcome {{currentUser.get('username')}}</h2>
+        <a href="#/app/profile" class="button button-block button-energized">View Profile</a>
+      </div>
+    </content>
+  </ion-view>
+</div>

@@ -1,0 +1,38 @@
+<ion-view title="Profile">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button menu-toggle="right" class="button button-icon icon ion-ios7-gear"></button>
+    </ion-nav-buttons>
+    <ion-content has-header="true">
+
+    <h1>Profile</h1>
+    <h4>{{currentUser.get('firstName')}} {{currentUser.get('lastName')}}</h4>
+    <p>@{{currentUser.get('username')}}</p>
+    <p>{{currentUser.get('tagline')}}</p>
+
+    <div class="button-bar bar-energized">
+        <a href="http://facebook.com/{{currentUser.get('facebook')}}" class="button"><i class="icon ion-social-facebook"></i></a>
+        <a href="http://twitter.com/{{currentUser.get('twitter')}}" class="button"><i class="icon ion-social-twitter"></i></a>
+        <a href="http://instagram.com/{{currentUser.get('instagram')}}" class="button"><i class="icon ion-android-camera"></i></a>
+        <a href="http://google.com/+{{currentUser.get('gplus')}}" class="button"><i class="icon ion-social-googleplus"></i></a>
+    </div>
+
+
+    <div class="card">
+      <div class="item item-divider">About</div>
+      <ul>
+        <li class="item"><strong>Location:</strong> {{currentUser.get('location')}}</li>
+        <li class="item"><strong>Experience:</strong> {{currentUser.get('experience')}}</li>
+        <li class="item"><strong>Sex:</strong> {{currentUser.get('sex')}}</li>
+        <li class="item"><strong>Tank:</strong> {{currentUser.get('tank')}}</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="item item-divider">Bio</div>
+      <p class="item">{{currentUser.get('bio')}}</p>
+    </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,67 @@
+/*Global Styles*/
+select{
+  width: 100%;
+}
+a button{
+  text-decoration: none;
+}
+.card h2{
+  color: white;
+  text-align: center;
+}
+.pane{
+  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+}
+.scroll{
+  height: 100%;
+}
+
+/*Menu Styles*/
+.menu{
+  background-color:#333;
+}
+.menu .item, .menu .item.active:not(.item-divider):not(.item-input):not(.item-input-inset){
+  border-color: #262626;
+}
+.menu .item-complex .item-content, .item-radio .item-content{
+  background: #333;
+  color: white;
+  border-color: #262626;
+}
+
+/*Authentication Styles*/
+#login-page > content > div.card, #welcome-page > div > content > div.card, #signup-page > ion-content > div > div:nth-child(1) > content > div{
+  background-color: rgba(0,0,0,.5);
+  padding: 40px;
+}
+#login-page{
+  background: url(../img/signup-bg1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  padding-top: 20px;
+}
+#login-page > content > div > div > form > label.item.item-input.item-stacked-label, #signup-page > div > div.scroll > div:nth-child(1) > content > div > div > form > label{
+  background: white;
+}
+#welcome-page{
+  background: url(../img/signup-bg2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+#signup-page > div > div.scroll{
+  height: 100%;
+}
+#signup-page{
+  background: url(../img/signup-bg3.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+}
